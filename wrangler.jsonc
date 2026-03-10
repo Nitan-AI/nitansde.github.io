@@ -1,0 +1,23 @@
+{
+  "name": "nitan-redirect",
+  "main": "src/index.js",
+  "compatibility_date": "2026-03-10",
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "nitan.ai/*",
+      "zone_name": "nitan.ai"
+    },
+    {
+      "pattern": "www.nitan.ai/*",
+      "zone_name": "nitan.ai"
+    }
+  ],
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "not_found_handling": "none",
+    "html_handling": "none",
+    "run_worker_first": true
+  }
+}
