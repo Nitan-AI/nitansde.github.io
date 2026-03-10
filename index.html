@@ -1461,6 +1461,7 @@
         <nav class="top-links" aria-label="Primary">
           <a class="nav-link" href="#capabilities">Capabilities</a>
           <a class="nav-link" href="#quickstart">Quickstart</a>
+          <a class="nav-link" href="#update">Update</a>
           <a class="nav-link" href="#cases">Use Cases</a>
           <a class="nav-link" href="#faq">FAQ</a>
           <a class="nav-link primary" href="#install">OpenClaw Skill</a>
@@ -1533,41 +1534,30 @@
             <pre><code id="skill-pack">clawhub install nitan</code></pre>
           </div>
 
-          <!-- <div class="install-points">
-            <div class="mini-card">
-              <strong>Pack once</strong>
-              <span>生成 <code>dist-skill/nitan.skill</code></span>
-            </div>
-            <div class="mini-card">
-              <strong>Import</strong>
-              <span>导入 OpenClaw Skill manager</span>
-            </div>
-            <div class="mini-card">
-              <strong>Run</strong>
-              <span><code>npx -y @nitansde/mcp@latest</code></span>
-            </div>
-            <div class="mini-card">
-              <strong>Verify</strong>
-              <span>用 <code>doctor</code> 做一次自检</span>
-            </div>
-          </div> -->
           <div class="install-copy">
             <p>
-              Skill安装完后，部署本地运行环境。
+              Skill安装完后，通知OpenClaw: "我已经安装nitan skill，帮我查看一下论坛今日热帖"；
+            </p>
+            <p>
+              如需登录，可以私聊OpenClaw你的账户密码或者自己修改openclaw.json配置文件。
             </p>
           </div>
 
           <div class="codewrap">
             <div class="codebar">
-              <span>Direct Run</span>
-              <button class="copybtn" type="button" data-copy-target="#doctor-run">Copy</button>
+              <span>Optinal: Config Nitan Account</span>
+              <button class="copybtn" type="button" data-copy-target="#skill-pack">Copy</button>
             </div>
-            <pre><code id="doctor-run">npx -y @nitansde/mcp@latest
-npx -y @nitansde/mcp@latest doctor</code></pre>
+            <pre><code id="skill-pack">
+"nitan": {
+  "enabled": true,
+  "env": {
+    "NITAN_USERNAME": "xxxyyy",
+    "NITAN_PASSWORD": "你的密码"
+  }
+}
+          </code></pre>
           </div>
-
-          <p class="hint">通知OpenClaw: "我已经安装nitan skill，帮我查看一下论坛今日热帖"</p>
-          <p class="hint">如需登录，可以私聊OpenClaw你的账户密码或者自己修改openclaw.json配置文件</p>
         </aside>
       </section>
 
@@ -1771,6 +1761,62 @@ NITAN_USERNAME=your_id
 NITAN_PASSWORD=your_password
 TIMEZONE=America/Los_Angeles</code></pre>
               </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="shell section" id="update" data-reveal>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Update</div>
+            <h2>老用户升级到最新版</h2>
+          </div>
+          <p>按你当前接入方式升级：本地、Claude Desktop、MCPHub 远程部署各有对应步骤。</p>
+        </div>
+
+        <div class="stats-grid" role="list">
+          <article class="stat-card spot-card" role="listitem" data-reveal>
+            <div class="card-head">
+              <span class="step-no">Local</span>
+              <span class="tag">macOS / Linux</span>
+            </div>
+            <h3>本地已有用户</h3>
+            <p>Option 1: 全局安装一次，后续用 <code>npx --no-install</code> 启动，避免每次重复下载。</p>
+            <div class="codewrap">
+              <div class="codebar">
+                <span>Local Update</span>
+                <button class="copybtn" type="button" data-copy-target="#update-local">Copy</button>
+              </div>
+              <pre><code id="update-local">npm install -g @nitansde/mcp@latest
+npx --no-install @nitansde/mcp@latest</code></pre>
+            </div>
+            <p>Option 2: <code>npx -y</code> 启动，每次启动自动更新。</p>
+          </article>
+
+          <article class="stat-card spot-card" role="listitem" data-reveal>
+            <div class="card-head">
+              <span class="step-no">Desktop</span>
+              <span class="tag">Claude</span>
+            </div>
+            <h3>MCPHub用户和Claude Desktop用户</h3>
+            <p>Claude Destop重启一次服务即可自动升级。</p>
+            <p>MCPHub重新点一次保存配置即可升级。</p>
+          </article>
+
+          <article class="stat-card spot-card" role="listitem" data-reveal>
+            <div class="card-head">
+              <span class="step-no">Remote</span>
+              <span class="tag">Linux / NAS / GCP</span>
+            </div>
+            <h3>OpenClaw Skill用户</h3>
+            <p>告诉你的OpenClaw：</p>
+            <div class="codewrap">
+              <div class="codebar">
+                <span>Local Update</span>
+                <button class="copybtn" type="button" data-copy-target="#update-local">Copy</button>
+              </div>
+              <pre><code id="update-local">帮我重新安装一下nitan skill里的@nitansde/mcp@latest</code></pre>
             </div>
           </article>
         </div>
